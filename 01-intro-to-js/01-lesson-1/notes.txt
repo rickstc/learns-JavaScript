@@ -1,0 +1,56 @@
+Lesson 1: What is JavaScript
+
+1. Intro to JavaScript
+Created by Brandon Eich in 1995.
+
+2. History of JavaScript
+Created in 10 days while Eich was working on NetScape Navigator.
+
+Naming: Originally called LiveScript, but changed to JavaScript to piggy back off of the popularity of Java.
+Differing versions emerged, and it was eventually turned over to ECMA International for standardization.
+The language is still referred to as JavaScript, but versions are referened by their ECMAScript version number (ES5/ES6)
+ECMA transitioned to a year-based release cycle, so versions may be labeled by year.
+
+3. The JavaScript Console
+Chrome Developer tools shortcuts: https://developers.google.com/web/tools/chrome-devtools/shortcuts
+Control + Shift + j
+
+JavaScript can be written directly in the console window.
+alert("Hello, Julia! How are you")
+
+4. Developer Tools on Different Browsers
+
+- Chrome: Control + Shift + i (Inspect)
+- Mozilla Firefox: Control + Shift + i
+- Internet Explorer: F12
+- Microsoft Edge: F12
+- Safari: Command + Option + i
+- Opera: Command + Shift + i
+
+5. console.log
+console.log can be used to display content to the JavaScript console
+
+console.log("hiya friend!")
+
+Demo example:
+for (var i = 0; i < 10; i++) {
+	console.log(i);
+}
+
+6. JavaScript Demo
+The following code was used to change the heading color:
+document.getElementsByTagName("h1")[0].style.color = "#ff0000";
+
+The following code was used to add an image of a cat to the page using a click listener:
+document.body.addEventListener('click', function () {
+     var myParent = document.getElementById("Banner"); 
+     var myImage = document.createElement("img");
+     myImage.src = 'https://thecatapi.com/api/images/get?format=src&type=gif';
+     myParent.appendChild(myImage);
+     myImage.style.marginLeft = "160px";
+});
+
+7. Lesson 1 Summary
+All major browsers come with built-in JavaScript engines to run and execute JavaScript code
+The JavaScript console allows us to test small snippets and print text
+We used JavaScript to add content and update styles on a page
