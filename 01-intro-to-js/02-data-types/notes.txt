@@ -1,0 +1,244 @@
+Lesson 2: Intro to Data Types
+
+1. Intro to Data Types
+Data is everywhere; different data have different types
+
+2. Numbers
+Numbers include any positive or negative integer and decimals
+
+Arithmetic Operations
+- Works pretty much like a calculator
+
+Comparing Numbers
+- 5 > 10 returns false
+- 5 < 10 returns true
+- 5 == 10 returns false
+
+3. Comments
+Comments are not executed by the interpreter, and can be used to help make code more readable
+
+// this is a single-line comment
+
+/*
+this is
+a multi-line
+comment
+*/
+
+4. Quiz: First Expression (2-1)
+Write an expression that uses at least three different arithmetic operations to log out 42
+Ex: console.log(1 + 5 - 2);
+Answer: console.log(4096 % 12 * 8 + 16 - 6 / 1)
+
+5. Strings
+Strings are enclosed in double or single quotes
+Strings can be single or multiple letters and include numbers and spaces
+Style guide located at: https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html recommends the use of single quotes to enclose strings to simplify strings that include html. The exception is JSON objects, which require double quotes.
+
+6. String Concatenation
+Strings are a collection of characters enclosed inside single or double quotes. Strings can be added together (concatenated).
+Ex: "Hello," + " New York City"
+
+"hello" + "world" => "helloworld"
+"Hello + 5*10" => "Hello + 5*10"
+"Hello" + 5*10 => "Hello50"
+The above example demonstrates implicit type converstion is a feature of JavaScript
+
+7. Variables
+Variables can be used to store data
+x = 5
+Expression: x + 1
+Becomes: 5 + 1 = 6
+Any data can be stored in varaible (numbers and strings)
+
+variables are declared using the 'var', 'let' or 'const' keywords. 'var' is no longer favored, but the course uses var thus far, so I will as well.
+
+var gretting = "Hello"
+greeting + " World!" => "Hello World!"
+
+Variables can be reassigned
+var greeting = "Hello"
+greeting = "Hola"
+
+Naming Conventions:
+Variables should be named using camelCase, and should accurately and succinctly describe the data
+
+Google Style Guide: https://google.github.io/styleguide/jsguide.html
+
+8. Quiz
+Convert celsius to fahrenheit
+var celsius = 12;
+var fahrenheit = celsius * 1.8 + 32;
+
+console.log(fahrenheit);
+
+9. String Index
+Individual characters in a string can be accessed using their index (location in string)
+"James"[0] => "J"
+var name = "James";
+name[0] => "J"
+
+String variables have a charAt() method that returns the same information.
+name.charAt(3) => "e"
+
+10. Escaping Strings
+Unescaped quotes within a string result in a SyntaxError
+Javascript can escape special characters using the backslash \
+var quote = "The man whispered, \"please speak to me.\""
+
+11. Comparing Strings
+"Yes" == "yes" => false
+Strings are case sensitive
+
+To determine greater or less than on strings, they are converted to numerical values for comparison. Thus "green" > "Green" => true
+
+12. Quiz: Favorite Food (2-3)
+Create a string with the name of your favorite food:
+console.log("Soup");
+
+13. Quiz: String Equality for All (2-4)
+Fix the expression to evaluate to true:
+"ALL Strings are CrEaTeD equal" == "All STRINGS are CrEaTED Equal"
+
+var answer = "ALL Strings are CrEaTeD equal" == "ALL Strings are CrEaTeD equal";
+console.log(answer);
+
+14. Quiz: All Tied Up (2-5)
+Build a string that resembles the following joke:
+Why couldn't the shoes go out and play?
+They were all "tied" up!
+
+var joke = "Why couldn't the shoes go out and play?\nThey were all \"tied\" up!"
+console.log(joke);
+
+15. Quiz: Yosa Buson (2-6)
+Build a string using concatenation by combining the lines from this famous haiku poem by Yosa Buson.
+
+Blowing from the west
+Fallen leaves gather
+In the east
+
+var haiku = "Blowing from the west" + "\n" + "Fallen leaves gather" + "\n" + "In the east.";
+console.log(haiku);
+
+16. Booleans
+Comparisons are always true or false (boolean)
+
+17. Quiz: Facebook Post (2-7)
+Identify components of a facebook post and classify variable type as String, Boolean, or Number
+
+18. Null, Undefined, and NaN
+null - data type "value of nothing"
+var x = null; (ok)
+
+undefined - data type " absence of value"
+Does not have a value, not even a value of nothing
+var x;
+console.log(x); => undefined
+
+NaN (Not-A-Number)
+Returned indicating an error with number operations
+Math.sqrt(-10) => NaN
+"hello"/5 => NaN
+
+19. Equality
+Mixed data equality testing can yield interesting results:
+"1" == 1 => true
+0 == false => true
+
+These results are because JavaScript is loosly typed (data types are not specified)
+JavaScript engine performs implicit type coercion (like when concatenating strings with numbers)
+
+"Hello" % 10 => NaN
+JavaScript attempts to convert "Hello" to a number. We can check what happens with that conversion with Number("Hello") => NaN
+
+Strongly typed languages are more likely to generate errors if data does not closely match an expected type
+JavaScript, being loosly typed, doesn't need explicit type specification, however it can lead to errors that are difficult to diagnose as it performs implicit type coercion
+
+When using the "==" and "!=" operators to check for equality, JavaScript performs the type coercion
+This is actually considred bad practice, because this is often not the behavior we want
+
+Instead, we should use strict equality where the type matters
+"===" and "!==" will check for quality in type and value, without doing the type coercion
+
+20. Quiz: Semicolons! (2-8)
+Semicolons should be used at the end of each line
+Instructions:
+Define two variables called thingOne and thingTwo and assign them values. Print the values of both variables in one console.log statement using concatenation. For example,
+
+red blue
+
+where "red" is the value of thingOne and "blue" is the value of thingTwo. Don't forget to use semicolons!
+
+Answer:
+var thingOne = "red";
+var thingTwo = "blue";
+console.log(thingOne + " " + thingTwo);
+
+21. Quiz: What's my Name? (2-9)
+Instructions:
+Create a variable called fullName and assign it your full name as a string.
+
+Answer:
+var fullName = "Tim Ricks";
+
+22. Quiz: Out to Dinner (2-10)
+Instructions:
+Create a variable called bill and assign it the result of 10.25 + 3.99 + 7.15 (don't perform the calculation yourself, let JavaScript do it!). Next, create a variable called tip and assign it the result of multiplying bill by a 15% tip rate. Finally, add the bill and tip together and store it into a variable called total.
+
+Print the total to the JavaScript console.
+
+Hint: 15% in decimal form is written as 0.15_._
+
+TIP: To print out the total with a dollar sign ( $ ) use string concatenation. To round total up by two decimal points use the toFixed() method. To use toFixed() pass it the number of decimal points you want to use. For example, if total equals 3.9860, then total.toFixed(2) would return 3.99.
+
+Answer:
+var bill = 10.25 + 3.99 + 7.15;
+var tip = bill * 0.15;
+var total = bill + tip;
+console.log("$" + total.toFixed(2));
+
+23. Quiz: Mad Libs (2-11)
+Instructions:
+Mad Libs is a word game where players have fun substituting words for blanks in a story. For this exercise, use the adjective variables below to fill in the blanks and complete the following message.
+
+"The Intro to JavaScript course is __________. James and Julia are so __________. I cannot wait to work through the rest of this __________ content!"
+var adjective1 = "amazing";
+var adjective2 = "fun";
+var adjective3 = "entertaining";
+Assign the resulting string to a variable called madLib.
+
+Answer:
+var adjective1 = "amazing";
+var adjective2 = "fun";
+var adjective3 = "entertaining";
+var madLib = "The Intro to JavaScript course is " + adjective1 + ". James and Julia are so " + adjective2 + ". I cannot wait to work through the rest of this " + adjective3 + " content!";
+console.log(madLib);
+
+
+
+24. Quiz: One Awesome Message (2-12)
+Instructions:
+Here are two awesome messages:
+
+Hi, my name is Julia. I love cats. In my spare time, I like to play video games.
+Hi, my name is James. I love baseball. In my spare time, I like to read.
+Declare and assign values to three variables for each part of the sentence that changes (firstName, interest, and hobby).
+
+Use your variables and string concatenation to create your own awesome message and store it in an awesomeMessage variable. Finally, print your awesome message to the JavaScript console.
+
+Answer:
+var firstName = "Tim";
+var interest = "dogs";
+var hobby = "read";
+
+var awesomeMessage = "Hi, my name is " + firstName + ". I love " + interest + ". In my spare time, I like to " + hobby + ".";
+console.log(awesomeMessage);
+
+25. Lesson 2 Summary
+Basic Data Types:
+- numbers
+- strings
+- booleans
+- null
+- undefined
